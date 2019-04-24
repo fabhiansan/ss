@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Segmen" aria-label="Search" name='search' value="{{ search_term }}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div class='container'>
+    <div class='row'>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search Years"
+            aria-label="Search"
+            name='search_years'
+            value="{{ search_term_years }}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+
+<table class='table'>
+    
+    <tr>
+        <th>Tahun</th>
+        <th>Bulan</th>
+        <th>Segmen</th>
+        <th>param1</th>
+        <th>param2</th>
+        <th>param3</th>
+        <th>rci</th>
+    </tr>
+{% for x in rci %}
+    <tr>
+        <td>{{ x.years }}</td>
+        <td>{{ x.month }}</td>
+        <td>{{ x.segmen }}</td>
+        <td>{{ x.parameter1 }}</td>
+        <td>{{ x.parameter2 }} </td>
+        <td>{{ x.parameter3 }}</td>
+        <td>{{ x.totalrci }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock content %}

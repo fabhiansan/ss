@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<ul>
+{% for x in reklamasi %}
+<li>   
+    {{ x.nama }} - 
+    {{ x.parameter1 }} - 
+    {{ x.parameter2 }} -
+    {{ x.parameter3 }} -
+</li>
+{% endfor %}
+
+</ul>
+{% endblock content %}
